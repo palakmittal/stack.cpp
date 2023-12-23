@@ -1,0 +1,31 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+
+
+int main(){
+	
+	stack<int>s;   //creation of stack
+	s.push(10);     //push operation
+	s.push(20);
+	s.push(30);
+	s.pop();          //pop operation-->30 removed
+	cout<<s.top()<<endl;   // returns  top element in stack-->20
+	cout<<s.empty()<<endl;	 // returns whether stack is empty or not{0,1}-->0
+	
+	cout<<s.size()<<endl;   //returns size of stack--->2	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	return 0;
+}
+
