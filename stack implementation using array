@@ -1,0 +1,78 @@
+#include<iostream>
+using namespace std;
+
+class Stack{
+	public:
+	//properties
+	int top;
+	int size;
+	int*arr;
+	
+	//constructor
+	Stack(int size){
+		this->size=size;
+		top=-1;
+		arr= new int[size];
+	}
+	
+	//behaviour
+	void push(int element){
+		//first we need to check do we have space available or not{size-top>1-->space available}
+		if(size-top>1){
+			top++;
+			arr[top]=element;
+		}
+		else{
+			cout<<"stack overflow,no space to insert any element."<<endl;
+		}
+	}
+	
+	void pop(){
+		if(top>=0){
+			cout<<"element popped="<<arr[top]<<endl;
+			top--;
+		}
+		else{
+			cout<<"stack underflow!"<<endl;
+		}
+	}
+	
+	int peek(){
+		if(top>=0){
+			return arr[top];
+		}else{
+			cout<<"stack is empty."<<endl;
+			return -1;
+		}
+	}
+	
+	bool isEmpty(){
+		if(top==-1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+};
+
+
+int main(){
+// WITHOUT USING STL STACK IMPLEMENTATION
+	
+	Stack stk(5);
+	
+	stk.push(10);
+	stk.push(20);
+	stk.push(30);
+	
+	cout<<"top element="<<stk.peek()<<endl;
+	cout<<"checking stack is empty or not=>"<<stk.isEmpty()<<endl;
+	
+	stk.pop();
+	
+	
+	
+	
+	return 0;
+}
+
